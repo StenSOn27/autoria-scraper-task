@@ -8,6 +8,3 @@ python -m alembic revision --autogenerate -m "initial migration"
 
 echo "Applying migration..."
 python -m alembic upgrade head
-
-echo "Starting application..."
-exec python src/main.py

@@ -23,7 +23,7 @@ if config.config_file_name is not None:
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
 from src.database.models.base import Base
-from src.database.models import *
+from src.database.models.car import *
 
 target_metadata = Base.metadata
 
