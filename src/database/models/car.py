@@ -2,7 +2,7 @@ from sqlalchemy import (
     Integer, DateTime, String, func, BigInteger
 )
 from datetime import datetime
-from src.database.models.base import Base
+from database.models.base import Base
 from sqlalchemy.orm import Mapped, mapped_column
 
 
@@ -10,9 +10,9 @@ class Car(Base):
     __tablename__ = "cars"
 
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
-    url: Mapped[str] = mapped_column(String(255))
+    url: Mapped[str] = mapped_column(String(255), unique=True, nullable=False)
     title: Mapped[str] = mapped_column(nullable=False)
-    price_usd: Mapped[float] = mapped_column(Integer)
+    price_usd: Mapped[int] = mapped_column(Integer)
     odometer: Mapped[int] = mapped_column(Integer)
     username: Mapped[str] = mapped_column(String(255))
     phone_number: Mapped[int] = mapped_column(BigInteger)

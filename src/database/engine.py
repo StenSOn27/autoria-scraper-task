@@ -1,8 +1,8 @@
 ﻿from contextlib import asynccontextmanager
-import os
 from sqlalchemy.ext.asyncio import (
     create_async_engine, async_sessionmaker, AsyncSession
 )
+from config import DATABASE_URL
 
 
 class DatabaseHelper:
@@ -29,4 +29,4 @@ class DatabaseHelper:
                 yield session
 
 
-db_helper = DatabaseHelper(os.getenv("DATABASE_URL"))
+db_helper = DatabaseHelper(DATABASE_URL)
