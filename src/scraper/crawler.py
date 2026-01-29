@@ -3,7 +3,7 @@ import aiohttp
 from loguru import logger
 from selectolax.parser import HTMLParser
 from playwright.async_api import async_playwright
-from src.database.repositories.car_repository import CarRepository
+from database.repositories.car_repository import CarRepository
 
 from scraper.client import fetch
 from scraper.parser import CarParser
