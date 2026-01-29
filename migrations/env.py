@@ -1,6 +1,8 @@
 import asyncio
 from logging.config import fileConfig
 import os
+from pathlib import Path
+import sys
 
 from sqlalchemy import pool
 from sqlalchemy.engine import Connection
@@ -9,6 +11,8 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 from alembic import context
 from dotenv import load_dotenv
 load_dotenv()
+
+sys.path.append(str(Path(__file__).resolve().parents[1]))
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
